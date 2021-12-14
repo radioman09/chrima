@@ -12,7 +12,7 @@
 <script>
     function updatePage() {
         // fetch data using get request http://localhost:3000/buttonsState
-        var data = fetch("/buttonsState", {
+        var data = fetch("api/buttonsState", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -46,7 +46,7 @@
         var form = event.srcElement;
         var formData = new FormData(form);
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/update_values", true);
+        xhr.open("POST", "api/update_values", true);
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 if (this.responseText !== "OK") {

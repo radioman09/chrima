@@ -22,10 +22,10 @@ const port = 3000
 const buttonsState = {}
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '/index.html'));
+    res.sendFile(path.join(__dirname, '..', '/index.html'));
 })
 
-app.post('/update_values', (req, res) => {
+app.post('/api/update_values', (req, res) => {
     try {
         if (!buttonsState[req.body.column]) {
             buttonsState[req.body.column] = {
@@ -52,7 +52,7 @@ app.post('/update_values', (req, res) => {
 
 })
 
-app.get('/buttonsState', (req, res) => {
+app.get('/api/buttonsState', (req, res) => {
 
     try {
         res.send(buttonsState)
